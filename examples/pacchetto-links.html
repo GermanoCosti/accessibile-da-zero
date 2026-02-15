@@ -1,61 +1,43 @@
-from __future__ import annotations
-
-import datetime as _dt
-
-
-def build_accessible_html(titolo: str, lingua: str = "it") -> str:
-    now = _dt.datetime.now().isoformat(timespec="seconds")
-    titolo_safe = titolo.replace("<", "").replace(">", "").strip() or "Documento"
-
-    from accessibile_da_zero import APP_AUTORE, APP_HOME, APP_LINKEDIN
-
-    links: list[str] = []
-    if APP_HOME:
-        links.append(f'<a href="{APP_HOME}">GitHub</a>')
-    if APP_LINKEDIN:
-        links.append(f'<a href="{APP_LINKEDIN}">LinkedIn</a>')
-    links_html = " | ".join(links) if links else ""
-
-    return f"""<!doctype html>
-<html lang="{lingua}">
+<!doctype html>
+<html lang="it">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{titolo_safe}</title>
+    <title>Documento accessibile</title>
     <style>
-      :root {{
+      :root {
         color-scheme: light;
-      }}
-      body {{
+      }
+      body {
         font-family: system-ui, Segoe UI, Arial, sans-serif;
         max-width: 980px;
         margin: 24px auto;
         padding: 0 16px;
         line-height: 1.55;
-      }}
-      a:focus, button:focus, input:focus {{
+      }
+      a:focus, button:focus, input:focus {
         outline: 3px solid #0b57d0;
         outline-offset: 2px;
-      }}
-      .box {{
+      }
+      .box {
         border: 1px solid #ddd;
         border-radius: 10px;
         padding: 14px;
         background: #fafafa;
-      }}
-      table {{
+      }
+      table {
         border-collapse: collapse;
         width: 100%;
-      }}
-      th, td {{
+      }
+      th, td {
         border: 1px solid #ddd;
         padding: 8px;
         text-align: left;
-      }}
-      th {{
+      }
+      th {
         background: #f2f2f2;
-      }}
-      .sr-only {{
+      }
+      .sr-only {
         position: absolute;
         width: 1px;
         height: 1px;
@@ -65,16 +47,16 @@ def build_accessible_html(titolo: str, lingua: str = "it") -> str:
         clip: rect(0, 0, 0, 0);
         white-space: nowrap;
         border: 0;
-      }}
+      }
     </style>
   </head>
   <body>
     <a class="sr-only" href="#contenuto">Salta al contenuto principale</a>
 
     <header>
-      <h1>{titolo_safe}</h1>
+      <h1>Documento accessibile</h1>
       <p class="box">
-        Template accessibile generato il <strong>{now}</strong>.
+        Template accessibile generato il <strong>2026-02-15T18:34:12</strong>.
         Suggerimento: usa titoli (H2/H3), link descrittivi e descrivi le immagini.
       </p>
     </header>
@@ -114,7 +96,7 @@ def build_accessible_html(titolo: str, lingua: str = "it") -> str:
           </tr>
           <tr>
             <td>Lingua</td>
-            <td>{lingua}</td>
+            <td>it</td>
           </tr>
         </tbody>
       </table>
@@ -122,10 +104,9 @@ def build_accessible_html(titolo: str, lingua: str = "it") -> str:
 
     <footer class="box" style="margin-top: 20px;">
       <p>
-        Creato con Accessibile Da Zero ({APP_AUTORE}).
-        {links_html}
+        Creato con Accessibile Da Zero (Germano Costi).
+        <a href="https://github.com/GermanoCosti">GitHub</a>
       </p>
     </footer>
   </body>
 </html>
-"""

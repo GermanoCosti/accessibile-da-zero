@@ -22,11 +22,13 @@ def write_accessible_docx(out_path: str | Path, titolo: str, lingua: str = "it-I
     out = Path(out_path).resolve()
     out.parent.mkdir(parents=True, exist_ok=True)
 
+    from accessibile_da_zero import APP_AUTORE, APP_HOME, APP_LINKEDIN
+
     doc = Document()
 
     # Metadati base
     doc.core_properties.title = titolo
-    doc.core_properties.author = "Germano Costi"
+    doc.core_properties.author = APP_AUTORE
     doc.core_properties.comments = f"Template accessibile. Lingua prevista: {lingua}."
 
     now = _dt.datetime.now().isoformat(timespec="seconds")
@@ -104,8 +106,12 @@ def write_accessible_docx(out_path: str | Path, titolo: str, lingua: str = "it-I
         doc.add_paragraph(item, style="List Number")
 
     doc.add_paragraph("")
-    doc.add_paragraph("Creato con Accessibile Da Zero (Germano Costi).", style="Normal")
+    tail = f"Creato con Accessibile Da Zero ({APP_AUTORE})."
+    if APP_HOME:
+        tail += f" GitHub: {APP_HOME}"
+    if APP_LINKEDIN:
+        tail += f" LinkedIn: {APP_LINKEDIN}"
+    doc.add_paragraph(tail, style="Normal")
 
     doc.save(str(out))
     return out
-
