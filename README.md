@@ -1,6 +1,6 @@
 # Accessibile Da Zero
 
-Generatore (Python) di file **DOCX** e **HTML** gia impostati con una struttura accessibile (titoli, liste, tabelle, link descrittivi) + checklist finale.
+Generatore Python di template **DOCX** + **HTML** accessibili "da zero" (titoli, alt, tabelle, form) con checklist finale, in italiano.
 
 Obiettivo: partire con documenti "giusti" fin dall'inizio, invece di correggere dopo.
 
