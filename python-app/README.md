@@ -6,6 +6,10 @@ cd python-app
 python -m pip install -e .
 ```
 
+## Download EXE (Windows)
+Se vuoi usare l'app senza installare Python:
+- https://github.com/GermanoCosti/accessibile-da-zero/releases/latest
+
 ## Esecuzione senza installare (fallback)
 ```powershell
 cd python-app

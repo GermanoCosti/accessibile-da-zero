@@ -5,7 +5,13 @@ Generatore Python di template **DOCX** + **HTML** accessibili "da zero" (titoli,
 Obiettivo: partire con documenti "giusti" fin dall'inizio, invece di correggere dopo.
 
 ## Download e uso rapido (Windows)
-Se non vuoi installare Python, in futuro questo repo potra' avere un EXE in Releases. Per ora:
+Se non vuoi installare Python:
+1. Apri la pagina Releases: https://github.com/GermanoCosti/accessibile-da-zero/releases/latest
+1. Scarica `AccessibileDaZero.exe` (oppure lo zip)
+1. Esegui da terminale:
+```powershell
+.\AccessibileDaZero.exe --help
+```
 
 ## Uso (sviluppo)
 ```powershell
