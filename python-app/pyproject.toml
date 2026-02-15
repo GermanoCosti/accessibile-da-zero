@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "accessibile-da-zero-germanocosti"
+version = "0.1.0"
+description = "Generatore DOCX/HTML con struttura accessibile + checklist (Italia)."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Germano Costi" }]
+dependencies = [
+  "python-docx>=1.1.2",
+]
+
+[project.urls]
+Homepage = "https://github.com/GermanoCosti"
+Repository = "https://github.com/GermanoCosti"
+Issues = "https://github.com/GermanoCosti"
+
+[project.scripts]
+accessibile-da-zero = "accessibile_da_zero.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+
