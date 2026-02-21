@@ -9,6 +9,8 @@ python -m pip install -e .
 ## Download EXE (Windows)
 Se vuoi usare l'app senza installare Python:
 - https://github.com/GermanoCosti/accessibile-da-zero/releases/latest
+- `AccessibileDaZeroGUI.exe` (consigliato, interfaccia grafica)
+- `AccessibileDaZero.exe` (CLI)
 
 ## Esecuzione senza installare (fallback)
 ```powershell
@@ -22,4 +24,5 @@ accessibile-da-zero --help
 accessibile-da-zero new-docx --out .\\documento.docx --titolo "Titolo" --lingua it-IT
 accessibile-da-zero new-html --out .\\pagina.html --titolo "Titolo" --lingua it
 accessibile-da-zero new-pack --dir .\\output --nome demo
+accessibile-da-zero-gui
 ```

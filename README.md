@@ -7,7 +7,7 @@ Obiettivo: partire con documenti "giusti" fin dall'inizio, invece di correggere 
 ## Download e uso rapido (Windows)
 Se non vuoi installare Python:
 1. Apri la pagina Releases: https://github.com/GermanoCosti/accessibile-da-zero/releases/latest
-1. Scarica `AccessibileDaZero.exe` (oppure lo zip)
+1. Scarica `AccessibileDaZeroGUI.exe` (interfaccia grafica) oppure `AccessibileDaZero.exe` (CLI)
 1. Esegui da terminale:
 ```powershell
 .\AccessibileDaZero.exe --help
@@ -41,6 +41,11 @@ accessibile-da-zero new-html --out .\\examples\\pagina-accessibile.html --titolo
 ## Crea un pacchetto (DOCX + HTML + Checklist)
 ```powershell
 accessibile-da-zero new-pack --dir .\\examples --nome "pacchetto-demo"
+```
+
+## Interfaccia grafica (Python)
+```powershell
+accessibile-da-zero-gui
 ```
 
 ## Note importanti (onesta')

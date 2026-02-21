@@ -30,11 +30,12 @@ jobs:
         run: |
           cd python-app
           pyinstaller --noconfirm --clean --onefile --name "AccessibileDaZero" accessibile_da_zero/cli.py
+          pyinstaller --noconfirm --clean --onefile --windowed --name "AccessibileDaZeroGUI" accessibile_da_zero/gui.py
 
       - name: Prepara ZIP
         run: |
           cd python-app/dist
-          powershell -NoProfile -Command "Compress-Archive -Path .\\AccessibileDaZero.exe -DestinationPath .\\AccessibileDaZero-windows.zip -Force"
+          powershell -NoProfile -Command "Compress-Archive -Path .\\AccessibileDaZero.exe,.\\AccessibileDaZeroGUI.exe -DestinationPath .\\AccessibileDaZero-windows.zip -Force"
 
       - name: Upload artifact (fallback)
         uses: actions/upload-artifact@v4
@@ -42,6 +43,7 @@ jobs:
           name: AccessibileDaZero-windows
           path: |
             python-app/dist/AccessibileDaZero.exe
+            python-app/dist/AccessibileDaZeroGUI.exe
             python-app/dist/AccessibileDaZero-windows.zip
 
       - name: Crea Release e carica file
@@ -50,5 +52,6 @@ jobs:
         with:
           files: |
             python-app/dist/AccessibileDaZero.exe
+            python-app/dist/AccessibileDaZeroGUI.exe
             python-app/dist/AccessibileDaZero-windows.zip
           generate_release_notes: true
