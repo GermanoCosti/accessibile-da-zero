@@ -1,5 +1,5 @@
 APP_NOME = "Accessibile Da Zero"
-APP_VERSIONE = "0.1.1"
+APP_VERSIONE = "0.1.2"
 APP_AUTORE = "Germano Costi"
 APP_HOME = "https://github.com/GermanoCosti"
 APP_LINKEDIN = ""

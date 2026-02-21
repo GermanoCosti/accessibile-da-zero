@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "accessibile-da-zero-germanocosti"
-version = "0.1.1"
+version = "0.1.2"
 description = "Generatore DOCX/HTML con struttura accessibile + checklist (Italia)."
 readme = "README.md"
 requires-python = ">=3.10"
